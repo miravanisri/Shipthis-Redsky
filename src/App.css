@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+}
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Main Container */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2fr 1fr 1fr 2fr;
+  gap: 10px;
+  width: 800px;
+  height: 450px;
+  margin: auto;
+}
+
+/* Common Box Style */
+.box {
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid Item Positioning */
+.container1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.container2 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  background: #4ecdc4;
+}
+
+.container3 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.container4 {
+  grid-column: 3 / 4;
+  grid-row: 2 / 5;
+  background: #1a535c;
+}
+
+.container5 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 5;
+  background: green;
+  color: black;
+}
+
+.container6 {
+  grid-column: 2 / 3;
+}
+
+/* Medium Screens (<=768px) */
+@media only screen and (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr 1fr 1fr 2fr;
+    gap: 8px;
+    width: 550px;
+    height: 350px;
+    margin: auto;
+  }
+
+  .box {
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  .container2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    background: #4ecdc4;
+  }
+
+  .container3 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .container4 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 5;
+    background: #1a535c;
+  }
+
+  .container5 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+    background: green;
+    color: black;
+  }
+
+  .container6 {
+    grid-column: 2 / 3;
+  }
+}
+
+/* Small Screens (<=600px) */
+@media only screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 6px;
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    position: relative;
+  }
+
+  /* Hide unused boxes */
+  .container3,
+  .container6 {
+    display: none;
+  }
+
+  /* First row */
+  .container2 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .container5 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  /* Second row - spans both columns */
+  .container4 {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    background: #1a535c;
+  }
+
+  /* Hidden below grid */
+  .container1 {
+    display: none;
+  }
+}
