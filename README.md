@@ -1,4 +1,4 @@
-# 🚀 My React Project
+# 🚀 Shipthis-Redsky
 
 ## 🧩 Project Summary
 This project is a modern **React-based web application** built using **React.js**, **Tailwind CSS**, and **Framer Motion**.  
